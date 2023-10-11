@@ -1,0 +1,241 @@
+.titulo-discussoes{
+    background-color: #FDF1EB; 
+    border-top-left-radius: 3px; 
+    border-top-right-radius: 3px; 
+    border: 1px #ECECEC solid;
+}
+
+.titulo-discussoes span{
+    font-size: 23px;
+    font-weight: 600;
+    padding: 20px;
+}
+
+.discussoes-info{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.discussoes-info p {
+    color: #ED7839;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.icons-discussoes{
+    margin: 20px;
+    display: flex;
+}
+
+.icons-discussoes img{
+    margin-right: 35px;
+}
+
+.discussoes-info span{
+    margin-top: 15px;
+    text-align: center;
+    color: #595959;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.25px;
+    word-wrap: break-word
+}
+
+.btn-topico{
+    margin-top: 40px;
+    position: relative;
+}
+
+.btn-topico hr {
+    width: 95%;
+    margin: 0 auto;
+    background-color: #E7E7E7;
+}
+
+.btn-topico button {
+    background: linear-gradient(180deg, #FEB254 0%, #F0813D 100%);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24); 
+    border-radius: 4px;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: absolute;
+    top: -20px; 
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+.discussoes-comentarios{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    width: 90%; 
+    height: 100%; 
+    background: white; 
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.12); 
+    border-radius: 4px; 
+    border: 1px #E7E7E7 solid;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+  
+.formulario-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+;.formulario-container form{
+    width: 100%;
+    
+}
+
+.formulario-container span{
+  margin: 10px;
+}
+
+.formulario-container .form-group{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-top: 5px;
+}
+
+.formulario-container .form-group label{
+    color: #ED7839;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.formulario-container .form-group input{
+    width: 90%;
+    padding:8px;
+    background: white; 
+    border-radius: 3px;
+    border: 1px #CCCCCC solid;
+}
+
+.formulario-container .form-group textarea{
+    width: 90%;
+    background: white; 
+    border-radius: 3px;
+    border: 1px #CCCCCC solid;
+}
+
+.formulario-container .btn{
+    width: 85.5%;
+    margin-left: 5%;
+    background-color: #CCCCCC;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.formulario-container .btn button{
+    padding: 7px;
+    width: 20%;
+    background: linear-gradient(180deg, #FEB154 0%, #F1833E 100%);
+    border-radius: 4px;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.mensagem-sucesso{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    gap: 20px;
+}
+
+.mensagem-sucesso h3{
+    font-size: 1.3em;
+    color: #ED7839;
+}
+
+.mensagem-sucesso a{
+    color: #F48F44;
+    font-size: 1.1em;
+}
+
+.blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(236, 236, 236, 0.5); 
+    border-radius: 4px; 
+    backdrop-filter: blur(5px); 
+}
+  
+
+.card-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; 
+}
+
+.card-message i{
+    font-size: 19px;
+}
+
+.card-message p {
+    margin: 15px;
+    font-size: 18px;
+    color: #707070; 
+}
+
+.card-message a {
+    color: #ED7839;
+}
+
+.card-expandido ul {
+    list-style-type: none;
+    margin-top: 20px;
+    width: 100%;
+    
+}
+
+.card-expandido li{
+    width: 100%;
+    padding: 15px;
+    border-bottom: 1px solid #E7E7E7;
+    border-top: 1px solid #E7E7E7;
+}
+
+.card-expandido .autor, .coautor{
+    background-color: #E7E7E7;
+}
+
+.card-expandido .titulo-card-expandido{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-expandido .cargo{
+    display: flex;
+    gap: 20px;
+    color: #ED7839;
+}
+
+.card-expandido .cargo i{
+    font-size: 19px;
+}
+
+.card-expandido ul li p{
+    margin-top: 15px;
+}

@@ -1,0 +1,119 @@
+<div class="titulo-discussoes">
+    <span> Discussões </span>
+</div>
+<div *ngIf="!mostrarFormulario && !enviadoComSucesso"class="discussoes-info">
+  <p>Compartilhe suas ideias ou dúvidas com os autores!</p>
+  <div class="icons-discussoes">
+    <img src="../../../../assets/icone1.svg" alt="">
+    <img src="../../../../assets/icone2.svg" alt="">
+    <img src="../../../../assets/icone3.svg" alt="">
+  </div>
+  <span>Sabia que o maior estímulo no desenvolvimento científico e cultural é a curiosidade? Deixe seus <br> questionamentos ou sugestões para o autor!</span>
+</div>
+
+<div *ngIf="mostrarFormulario && !enviadoComSucesso" class="formulario-container">
+  <span>Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!</span>
+  <form (ngSubmit)="enviarFormulario()">
+    <div class="form-group">
+      <label for="assunto">Assunto</label>
+      <input type="text" class="form-control" id="assunto" name="assunto" placeholder="Defina um tópico sucinto para notificar os autores...">
+    </div>
+    <div class="form-group">
+      <label for="conteudo">Conteúdo</label>
+      <textarea class="form-control" id="conteudo" name="conteudo" rows="5"></textarea>
+    </div>
+    <div class="btn">
+      <button type="submit">Enviar</button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="enviadoComSucesso" class="mensagem-sucesso">
+  <h3>Seu tópico foi enviado com sucesso! :D</h3>
+  <p>Agradecemos por sua contribuição. Uma notificação será enviada ao seu e-mail assim que seu tópico for respondido!</p>
+  <a href="#">Descubra outros trabalhos!</a>
+</div>
+
+<div class="btn-topico">
+  <button *ngIf="!mostrarFormulario && !enviadoComSucesso" (click)="toggleFormulario()">
+    <i class="fa-solid fa-plus"></i> Criar Tópico
+  </button>
+  <button *ngIf="enviadoComSucesso" (click)="criarOutroTopico()">
+    <i class="fa-solid fa-plus"></i> Criar Novo Tópico
+  </button>
+  <hr>
+</div>
+
+
+
+<div class="discussoes-comentarios">
+
+  <div *ngIf="mostrarCard" class="card">
+    <app-card></app-card>
+    <div class="blur"></div> 
+    
+    <div class="card-message"> 
+      <i class="fa-solid fa-check-double"></i>
+      <p>Aguardando feedback dos autores</p>
+      <a href="#">Editar Tópico</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <app-card></app-card>
+
+  </div>
+  
+  <div class="card" (click)="toggleCardExpandido()">
+    <app-card></app-card>
+    <div *ngIf="cardExpandido" class="card-expandido">
+      <ul>
+        <li class="autor">
+          <div class="titulo-card-expandido">
+            <strong >Adriano da Silva</strong>
+          <div class="cargo">
+            <strong>Autor</strong>
+            <i class="fa-solid fa-check-double"></i>
+          </div>
+          </div>
+          <p>Resposta do autor é aqui. Relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo.</p>
+        </li>
+        <li>
+          <div class="titulo-card-expandido">
+            <strong>Carlos Henrique Santos</strong>
+          </div>
+          <p>Consegui entender melhor agora! Parece que a variação da análise da dimensão e impacto de processo formativo situado impacto de processo formativo.
+
+          Obrigada pela resposta, muito interessante o seu trabalho! </p>
+        </li>
+        <li class="coautor">
+          <div class="titulo-card-expandido">
+            <strong>Carmila Ferreira Andrade</strong>
+            <div class="cargo">
+              <strong>Coautor</strong>
+              <i class="fa-solid fa-check-double"></i>
+            </div>
+          </div>
+          <p>Também ínteressante lembrar que o relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo.
+
+          Situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo.</p>
+        </li>
+        <li class="coautor">
+          <div class="titulo-card-expandido">
+            <strong >Ana Carolina</strong>
+            <div class="cargo">
+              <strong>Coautor</strong>
+              <i class="fa-solid fa-check-double"></i>
+            </div>
+          </div>
+          <p>Resposta do autor é aqui. Relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  
+  
+
+   
+</div>
