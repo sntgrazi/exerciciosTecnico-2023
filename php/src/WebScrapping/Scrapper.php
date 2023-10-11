@@ -68,7 +68,6 @@ class Scrapper {
     return ['message' => 'Planilha gerada com sucesso!!'];
   }
 
-  //Extrai as informações Id, Title, Type, e Authors
   private function extractPaperData($paperCard) {
     $titleElement = $paperCard->getElementsByTagName('h4')->item(0);
     $title = $titleElement ? $titleElement->textContent : '';
@@ -93,7 +92,6 @@ class Scrapper {
     return new Paper($id, $title, $type, $authors);
 }
 
-//Escreve os dados do artigo na planilha nas colunas apropriadas.
 private function writePaperDataToSheet($sheet, $paper, $row, $maxAuthors) {
   $sheet->setCellValue('A' . $row, $paper->getId());
   $sheet->setCellValue('B' . $row, $paper->getTitle());
