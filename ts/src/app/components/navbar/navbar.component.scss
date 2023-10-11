@@ -1,0 +1,59 @@
+.navbar {
+    width: 100%;
+    height: 4rem;
+    background-color: #FDF1EB;
+    position: fixed;
+    top: 0;
+    left: 200px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    z-index: 99;
+    transition: .5s;
+
+}
+  
+.navbar__info {
+    color: #725C5C;
+    font-size: 1em;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+.language-button {
+    border-radius: 3px; 
+    border: 1px #CCCCCC solid;
+    color: #333333;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.user-profile {
+    margin-right: 220px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: #725C5C;
+}
+
+
+.user-img img{
+    border-radius: 100%;
+}
+
+.user-info {
+    margin-right: 10px;
+    text-align: right; /* Alinha o texto à direita dentro do container */
+}
+
+.user-email {
+font-weight: bold;
+}
+
