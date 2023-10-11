@@ -4,9 +4,9 @@
 <div *ngIf="!mostrarFormulario && !enviadoComSucesso"class="discussoes-info">
   <p>Compartilhe suas ideias ou dúvidas com os autores!</p>
   <div class="icons-discussoes">
-    <img src="../../../../assets/icone1.svg" alt="">
-    <img src="../../../../assets/icone2.svg" alt="">
-    <img src="../../../../assets/icone3.svg" alt="">
+    <img src="../../../../assets/img/icone1.svg" alt="">
+    <img src="../../../../assets/img/icone2.svg" alt="">
+    <img src="../../../../assets/img/icone3.svg" alt="">
   </div>
   <span>Sabia que o maior estímulo no desenvolvimento científico e cultural é a curiosidade? Deixe seus <br> questionamentos ou sugestões para o autor!</span>
 </div>
@@ -16,11 +16,11 @@
   <form (ngSubmit)="enviarFormulario()">
     <div class="form-group">
       <label for="assunto">Assunto</label>
-      <input type="text" class="form-control" id="assunto" name="assunto" placeholder="Defina um tópico sucinto para notificar os autores...">
+      <input type="text" class="form-control subject" id="assunto" name="assunto" placeholder="Defina um tópico sucinto para notificar os autores...">
     </div>
     <div class="form-group">
       <label for="conteudo">Conteúdo</label>
-      <textarea class="form-control" id="conteudo" name="conteudo" rows="5"></textarea>
+      <textarea class="form-control subject" id="conteudo" name="conteudo" rows="5"></textarea>
     </div>
     <div class="btn">
       <button type="submit">Enviar</button>
@@ -35,8 +35,8 @@
 </div>
 
 <div class="btn-topico">
-  <button *ngIf="!mostrarFormulario && !enviadoComSucesso" (click)="toggleFormulario()">
-    <i class="fa-solid fa-plus"></i> Criar Tópico
+  <button class="btn-create-topic" *ngIf="!mostrarFormulario && !enviadoComSucesso" (click)="toggleFormulario()">
+    <i class="fa-solid fa-plus"></i> criar tópico
   </button>
   <button *ngIf="enviadoComSucesso" (click)="criarOutroTopico()">
     <i class="fa-solid fa-plus"></i> Criar Novo Tópico
@@ -64,11 +64,11 @@
 
   </div>
   
-  <div class="card" (click)="toggleCardExpandido()">
+  <div class="card answered-topic" (click)="toggleCardExpandido()">
     <app-card></app-card>
     <div *ngIf="cardExpandido" class="card-expandido">
       <ul>
-        <li class="autor">
+        <li class="autor comments-container">
           <div class="titulo-card-expandido">
             <strong >Adriano da Silva</strong>
           <div class="cargo">
@@ -78,7 +78,7 @@
           </div>
           <p>Resposta do autor é aqui. Relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo.</p>
         </li>
-        <li>
+        <li class="comments-container">
           <div class="titulo-card-expandido">
             <strong>Carlos Henrique Santos</strong>
           </div>
@@ -86,7 +86,7 @@
 
           Obrigada pela resposta, muito interessante o seu trabalho! </p>
         </li>
-        <li class="coautor">
+        <li class="coautor comments-container">
           <div class="titulo-card-expandido">
             <strong>Carmila Ferreira Andrade</strong>
             <div class="cargo">
@@ -98,7 +98,7 @@
 
           Situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo.</p>
         </li>
-        <li class="coautor">
+        <li class="coautor comments-container">
           <div class="titulo-card-expandido">
             <strong >Ana Carolina</strong>
             <div class="cargo">

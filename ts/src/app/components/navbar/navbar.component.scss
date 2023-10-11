@@ -4,14 +4,17 @@
     background-color: #FDF1EB;
     position: fixed;
     top: 0;
-    left: 200px; 
+    left: 200px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
     z-index: 99;
     transition: .5s;
+}
 
+.navbar.hidden {
+    transform: translateY(-100%);
 }
   
 .navbar__info {
