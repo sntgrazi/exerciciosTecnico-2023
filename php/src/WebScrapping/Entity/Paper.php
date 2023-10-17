@@ -46,75 +46,83 @@ class Paper {
   }
 
   /**
- * Obtém o ID do item.
- *
- * @return int O ID do item.
- */
-public function getId() {
-  return $this->id;
-}
+   * Obtém o ID do item.
+   *
+   * @return int
+   *   O ID do item.
+   */
+  public function getId() {
+    return $this->id;
+  }
 
-/**
-* Define o ID do item.
-*
-* @param int $id O ID a ser atribuído ao item.
-*/
-public function setId($id) {
-  $this->id = $id;
-}
+  /**
+   * Define o ID do item.
+   *
+   * @param int $id
+   *   O ID a ser atribuído ao item.
+   */
+  public function setId($id) {
+    $this->id = $id;
+  }
 
-/**
-* Obtém o título do item.
-*
-* @return string O título do item.
-*/
-public function getTitle() {
-  return $this->title;
-}
+  /**
+   * Obtém o título do item.
+   *
+   * @return string
+   *   O título do item.
+   */
+  public function getTitle() {
+    return $this->title;
+  }
 
-/**
-* Define o título do item.
-*
-* @param string $title O título a ser atribuído ao item.
-*/
-public function setTitle($title) {
-  $this->title = $title;
-}
+  /**
+   * Define o título do item.
+   *
+   * @param string $title
+   *   O título a ser atribuído ao item.
+   */
+  public function setTitle($title) {
+    $this->title = $title;
+  }
 
-/**
-* Obtém o tipo do item.
-*
-* @return string O tipo do item.
-*/
-public function getType() {
-  return $this->type;
-}
+  /**
+   * Obtém o tipo do item.
+   *
+   * @return string
+   *   O tipo do item.
+   */
+  public function getType() {
+    return $this->type;
+  }
 
-/**
-* Define o tipo do item.
-*
-* @param string $type O tipo a ser atribuído ao item.
-*/
-public function setType($type) {
-  $this->type = $type;
-}
+  /**
+   * Define o tipo do item.
+   *
+   * @param string $type
+   *   O tipo a ser atribuído ao item.
+   */
+  public function setType($type) {
+    $this->type = $type;
+  }
 
-/**
-* Obtém os autores do item.
-*
-* @return array Os autores do item.
-*/
-public function getAuthors() {
-  return $this->authors;
-}
+  /**
+   * Obtém os autores do item.
+   *
+   * @return array
+   *   Os autores do item.
+   */
+  public function getAuthors() {
+    return $this->authors;
+  }
 
-/**
-* Define os autores do item.
-*
-* @param array $authors Os autores a serem atribuídos ao item.
-*/
-public function setAuthors($authors) {
-  $this->authors = $authors;
-}
+  /**
+   * Define os autores do item.
+   *
+   * @param array $authors
+   *   Os autores a serem atribuídos ao item.
+   */
+  public function setAuthors($authors) {
+    $this->authors = $authors;
+  }
 
 }
