@@ -7,6 +7,7 @@ use Chuva\Php\WebScrapping\Entity\Person;
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
 /**
  * Does the scrapping of a webpage.
@@ -104,7 +105,7 @@ class Scrapper {
    * Este método escreve os dados de um objeto Paper em uma planilha,
    * incluindo ID, título, tipo e informações dos autores.
    *
-   * @param $sheet
+   * @param Worksheet $sheet
    *   A planilha na qual os dados serão escritos.
    * @param \Chuva\Php\WebScrapping\Entity\Paper $paper
    *   O objeto Paper contendo os dados a serem escritos.
