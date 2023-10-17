@@ -69,7 +69,7 @@ class Scrapper {
   }
 
   /**
-   * Este método extrai dados como título, autores, ID e tipo de um cartão de papel.
+   * Este método que os dados título, autores, ID e tipo.
    *
    * @return \Chuva\Php\WebScrapping\Entity\Paper
    *   O objeto Paper contendo os dados extraídos.
@@ -104,8 +104,6 @@ class Scrapper {
    * Este método escreve os dados de um objeto Paper em uma planilha,
    * incluindo ID, título, tipo e informações dos autores.
    *
-   * @param PHPExcel_Worksheet $sheet
-   *   A planilha onde os dados serão escritos.
    * @param \Chuva\Php\WebScrapping\Entity\Paper $paper
    *   O objeto Paper contendo os dados a serem escritos.
    * @param int $row
