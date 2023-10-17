@@ -104,6 +104,8 @@ class Scrapper {
    * Este método escreve os dados de um objeto Paper em uma planilha,
    * incluindo ID, título, tipo e informações dos autores.
    *
+   * @param $sheet
+   *   A planilha na qual os dados serão escritos.
    * @param \Chuva\Php\WebScrapping\Entity\Paper $paper
    *   O objeto Paper contendo os dados a serem escritos.
    * @param int $row
