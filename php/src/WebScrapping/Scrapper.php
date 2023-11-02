@@ -64,7 +64,7 @@ class Scrapper {
     $writer = new Xlsx($spreadsheet);
     $writer->save($excelFilePath);
 
-    return ['message' => 'Planilha gerada com sucesso!!'];
+    return $papers;
   }
 
   /**
