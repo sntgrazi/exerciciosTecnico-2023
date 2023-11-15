@@ -10,20 +10,21 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
  */
 class Main
 {
-    /**
-     * Main runner, instantiates a Scrapper and runs.
-     */
+
+  /**
+   * Main runner, instantiates a Scrapper and runs.
+   */
     public static function run(): void
     {
         $dom = new \DOMDocument('1.0', 'utf-8');
         libxml_use_internal_errors(true);
-
-        @$dom->loadHTMLFile(__DIR__.'/../../assets/origin.html');
+    
+        @$dom->loadHTMLFile(__DIR__ . '/../../assets/origin.html');
 
         $data = (new Scrapper())->scrap($dom);
 
-        // Geração da planilha
-
+      // Geração da planilha
+    
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
 
@@ -31,39 +32,40 @@ class Main
         $sheet->setCellValue('B1', 'TITLE');
         $sheet->setCellValue('C1', 'TYPE');
 
-        // Definir cabeçalhos para autores
+// Definir cabeçalhos para autores
         $colIndex = 4; // Começar a partir da coluna D (4ª coluna)
         $maxAuthors = max(array_map('count', array_column($data, 'authors')));
 
-        for ($i = 1; $i <= $maxAuthors; ++$i) {
-            $sheet->setCellValueByColumnAndRow($colIndex, 1, "AUTHOR $i");
-            $sheet->setCellValueByColumnAndRow($colIndex + 1, 1, "AUTHOR INSTITUTION $i");
-            $colIndex += 2; // Avançar duas colunas para o próximo autor
+        for ($i = 1; $i <= $maxAuthors; $i++) {
+                $sheet->setCellValueByColumnAndRow($colIndex, 1, "AUTHOR $i");
+                $sheet->setCellValueByColumnAndRow($colIndex + 1, 1, "AUTHOR INSTITUTION $i");
+                $colIndex += 2; // Avançar duas colunas para o próximo autor
         }
 
-        // Preencher dados
+// Preencher dados
         $rowIndex = 2;
         foreach ($data as $result) {
-            $sheet->setCellValueByColumnAndRow(1, $rowIndex, $result->id);
-            $sheet->setCellValueByColumnAndRow(2, $rowIndex, $result->title);
-            $sheet->setCellValueByColumnAndRow(3, $rowIndex, $result->type);
+              $sheet->setCellValueByColumnAndRow(1, $rowIndex, $result->id);
+              $sheet->setCellValueByColumnAndRow(2, $rowIndex, $result->title);
+              $sheet->setCellValueByColumnAndRow(3, $rowIndex, $result->type);
 
-            // Preencher dados para autores
-            $colIndex = 4;
+              // Preencher dados para autores
+              $colIndex = 4;
             foreach ($result->authors as $author) {
                 $sheet->setCellValueByColumnAndRow($colIndex, $rowIndex, $author->name);
                 $sheet->setCellValueByColumnAndRow($colIndex + 1, $rowIndex, $author->institution);
                 $colIndex += 2;
             }
 
-            ++$rowIndex;
+            $rowIndex++;
         }
 
-        // Salvar planilha
+    // Salvar planilha
         $writer = new Xlsx($spreadsheet);
         $writer->save('paper.xlsx');
 
-        // Imprimir os dados na tela
+
+    // Imprimir os dados na tela
         print_r($data);
     }
 }
