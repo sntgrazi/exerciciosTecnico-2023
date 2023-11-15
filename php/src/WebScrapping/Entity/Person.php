@@ -69,5 +69,4 @@ class Person
     {
         $this->institution = $institution;
     }
-
 }
