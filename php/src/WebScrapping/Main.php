@@ -8,14 +8,16 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 /**
  * Runner for the Webscrapping exercice.
  */
-class Main {
+class Main
+{
 
-   /**
-   * Main runner, instantiates a Scrapper and runs.
-   */
-    public static function run(): void {
+    /**
+     * Main runner, instantiates a Scrapper and runs.
+     */
+    public static function run(): void
+    {
         $dom = new \DOMDocument('1.0', 'utf-8');
-        libxml_use_internal_errors(TRUE);
+        libxml_use_internal_errors(true);
     
         @$dom->loadHTMLFile(__DIR__ . '/../../assets/origin.html');
 

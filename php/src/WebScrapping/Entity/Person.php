@@ -5,7 +5,8 @@ namespace Chuva\Php\WebScrapping\Entity;
 /**
  * Paper Author personal information.
  */
-class Person {
+class Person
+{
     /**
      * Person name.
      */
@@ -19,7 +20,8 @@ class Person {
     /**
      * Builder.
      */
-    public function __construct($name, $institution) {
+    public function __construct($name, $institution)
+    {
         $this->name = $name;
         $this->institution = $institution;
     }
@@ -30,7 +32,8 @@ class Person {
      * @return string
      *   O nome da pessoa.
      */
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
@@ -40,7 +43,8 @@ class Person {
      * @param string $name
      *   O nome a ser atribuído à pessoa.
      */
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
     }
 
@@ -50,7 +54,8 @@ class Person {
      * @return string
      *   A instituição da pessoa.
      */
-    public function getInstitution() {
+    public function getInstitution()
+    {
         return $this->institution;
     }
 
@@ -60,7 +65,8 @@ class Person {
      * @param string $institution
      *   A instituição a ser atribuída à pessoa.
      */
-    public function setInstitution($institution) {
+    public function setInstitution($institution)
+    {
         $this->institution = $institution;
     }
 }

@@ -5,7 +5,8 @@ namespace Chuva\Php\WebScrapping\Entity;
 /**
  * The Paper class represents the row of the parsed data.
  */
-class Paper {
+class Paper
+{
     /**
      * Paper Id.
      *
@@ -37,7 +38,8 @@ class Paper {
     /**
      * Builder.
      */
-    public function __construct($id, $title, $type, $authors = []) {
+    public function __construct($id, $title, $type, $authors = [])
+    {
         $this->id = $id;
         $this->title = $title;
         $this->type = $type;
@@ -50,7 +52,8 @@ class Paper {
      * @return int
      *   O ID do item.
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
@@ -60,7 +63,8 @@ class Paper {
      * @param int $id
      *   O ID a ser atribuído ao item.
      */
-    public function setId($id) {
+    public function setId($id)
+    {
         $this->id = $id;
     }
 
@@ -70,7 +74,8 @@ class Paper {
      * @return string
      *   O título do item.
      */
-    public function getTitle() {
+    public function getTitle()
+    {
         return $this->title;
     }
 
@@ -80,7 +85,8 @@ class Paper {
      * @param string $title
      *   O título a ser atribuído ao item.
      */
-    public function setTitle($title) {
+    public function setTitle($title)
+    {
         $this->title = $title;
     }
 
@@ -90,7 +96,8 @@ class Paper {
      * @return string
      *   O tipo do item.
      */
-    public function getType() {
+    public function getType()
+    {
         return $this->type;
     }
 
@@ -100,7 +107,8 @@ class Paper {
      * @param string $type
      *   O tipo a ser atribuído ao item.
      */
-    public function setType($type) {
+    public function setType($type)
+    {
         $this->type = $type;
     }
 
@@ -110,7 +118,8 @@ class Paper {
      * @return array
      *   Os autores do item.
      */
-    public function getAuthors() {
+    public function getAuthors()
+    {
         return $this->authors;
     }
 
@@ -120,7 +129,8 @@ class Paper {
      * @param array $authors
      *   Os autores a serem atribuídos ao item.
      */
-    public function setAuthors($authors) {
+    public function setAuthors($authors)
+    {
         $this->authors = $authors;
     }
 }
