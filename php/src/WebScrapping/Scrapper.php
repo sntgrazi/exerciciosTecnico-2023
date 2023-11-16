@@ -8,13 +8,11 @@ use Chuva\Php\WebScrapping\Entity\Person;
 /**
  * Does the scrapping of a webpage.
  */
-class Scrapper
-{
+class Scrapper {
     /**
      * Loads paper information from the HTML and returns the array with the data.
      */
-    public function scrap(\DOMDocument $dom): array
-    {
+    public function scrap(\DOMDocument $dom): array {
         $xpath = new \DOMXPath($dom);
 
         $links = $xpath->query('//a[contains(@class, "paper-card")]');
