@@ -8,44 +8,44 @@ use Chuva\Php\WebScrapping\Entity\Person;
 /**
  * Does the scrapping of a webpage.
  */
-class Scrapper
-{
-    /**
-     * Loads paper information from the HTML and returns the array with the data.
-     */
-    public function scrap(\DOMDocument $dom): array
-    {
-        $xpath = new \DOMXPath($dom);
+class Scrapper {
 
-        $links = $xpath->query('//a[contains(@class, "paper-card")]');
+  /**
+   * Loads paper information from the HTML and returns the array with the data.
+   */
+  public function scrap(\DOMDocument $dom): array {
+    $xpath = new \DOMXPath($dom);
 
-        $papers = [];
+    $links = $xpath->query('//a[contains(@class, "paper-card")]');
 
-        foreach ($links as $link) {
-            $id = explode('/', $link->getAttribute('href'))[8];
+    $papers = [];
 
-            $titleElement = $link->getElementsByTagName('h4')->item(0);
-            $title = $titleElement ? $titleElement->nodeValue : '';
+    foreach ($links as $link) {
+      $id = explode('/', $link->getAttribute('href'))[8];
 
-            $typeElement = $link->getElementsByTagName('div')->item(1);
-            $typeWithId = $typeElement ? $typeElement->nodeValue : '';
+      $titleElement = $link->getElementsByTagName('h4')->item(0);
+      $title = $titleElement ? $titleElement->nodeValue : '';
 
-            preg_match('/^(.+?)(\d+)$/', $typeWithId, $matches);
-            $type = isset($matches[1]) ? trim($matches[1]) : '';
-            $id = isset($matches[2]) ? trim($matches[2]) : $id;
+      $typeElement = $link->getElementsByTagName('div')->item(1);
+      $typeWithId = $typeElement ? $typeElement->nodeValue : '';
 
-            $authorElements = $link->getElementsByTagName('span');
-            $authors = [];
+      preg_match('/^(.+?)(\d+)$/', $typeWithId, $matches);
+      $type = isset($matches[1]) ? trim($matches[1]) : '';
+      $id = isset($matches[2]) ? trim($matches[2]) : $id;
 
-            foreach ($authorElements as $authorElement) {
-                $author = $authorElement->nodeValue;
-                $institution = $authorElement->getAttribute('title');
-                $authors[] = new Person($author, $institution);
-            }
+      $authorElements = $link->getElementsByTagName('span');
+      $authors = [];
 
-            $papers[] = new Paper($id, $title, $type, $authors);
-        }
+      foreach ($authorElements as $authorElement) {
+        $author = $authorElement->nodeValue;
+        $institution = $authorElement->getAttribute('title');
+        $authors[] = new Person($author, $institution);
+      }
 
-        return $papers;
+      $papers[] = new Paper($id, $title, $type, $authors);
     }
+
+    return $papers;
+  }
+
 }
